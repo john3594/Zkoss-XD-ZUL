@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window id="mainWindow" title="Main Window" border="normal" width="400px" apply="org.zkoss.bind.BindComposer">
+        <!-- Button to Open Modal -->
+        <button label="Open Modal" onClick="openModal()" />
+    </window>
+    
+    <!-- Modal Dialog -->
+    <window id="modalDialog" title="Modal Dialog" border="normal" width="300px" visible="false">
+        <vlayout spacing="10px">
+            <!-- Content of the Modal -->
+            <label value="This is a modal dialog." />
+            <button label="Close" onClick="closeModal()" />
+        </vlayout>
+    </window>
+    
+    <zscript><![CDATA[
+        // Function to Open the Modal Dialog
+        void openModal() {
+            modalDialog.doModal(); // Display the modal dialog
+        }
+        
+        // Function to Close the Modal Dialog
+        void closeModal() {
+            modalDialog.setVisible(false); // Hide the modal dialog
+        }
+    ]]></zscript>
+</zk>
