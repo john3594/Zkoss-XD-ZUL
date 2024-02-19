@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+          
+        }
+        .container {
+            width: 768px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Button styles */
+        .green-button {
+            background-color: #5BA948;
+            color: white;
+            padding: 20px 60px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            display : flex;
+            align-items: center;
+            justify-content : center;
+            margin-top : 30px;
+            margin-left: auto;
+			margin-right: auto;
+			width: 50%;
+        }
+        /* Selection tag and div tag styles */
+      	.days {
+            border: solid 1px black;
+            border-radius: 12px;
+            padding: 5px;
+            margin: 5px 0;
+            width: calc(50% - 10px);
+        }
+        /* Calendar and clock symbols styles */
+        .symbol {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        /* days style */
+        .days {
+        	width:360px;
+        	background: rgb(116,145,176);
+			background: linear-gradient(45deg, rgba(116,145,176,1) 25%, rgba(54,91,134,1) 37%, rgba(39,79,124,1) 49%, rgba(61,98,139,1) 59%, rgba(199,216,232,1) 70%, rgba(23,65,113,0.969625350140056) 99%, rgba(49,87,131,1) 100%);
+        	margin-bottom:14px;
+        	margin-top:47px;
+        	display : flex;
+        	justify-content : left;
+        	border : solid 1px #DBDBDB;
+        	border-radius:9px;
+        	padding : 40px;
+        	padding-left : 12px;
+        	margin-right : 32px;
+        }
+       .table-container {
+            width: 100%;
+            overflow-x: auto;
+            padding: 8px; /* Add padding to cells */
+            text-align : center;
+        }
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            select, .days {
+                width: 100%;
+            }
+        }
+        td.years , td.season, td.month {
+			text-align: center;
+			border-right: none!important;
+			color: #043554;
+		}
+		td.z-cell.years {
+			background: #085d8a !important;
+			color: white;
+		}
+	.years .z-label {
+		font-size: 16px;
+	}
+	td.season {
+		background: #F2DFBA !important;
+		border: none !important;
+	}
+	td.month {
+		background: #CADBA4 !important;
+		border: none !important;
+		font-style: italic;
+	}
+	.tooltip {
+		padding: .8em;
+		width: 200px;
+		border-width: 2px !important;
+		position: absolute;
+		background:#FFE45C repeat-x scroll 50% top;
+		border : 1px solid #FED22F;
+		color : #363636 ;
+		-moz-border-radius-bottomleft:4px;
+		-moz-border-radius-bottomright:4px;
+		-moz-border-radius-topleft:4px;
+		-moz-border-radius-topright:4px;
+		-webkit-border-top-left-radius: 4px;
+	    -webkit-border-top-right-radius: 4px;
+	    -webkit-border-bottom-left-radius: 4px;
+	    -webkit-border-bottom-right-radius: 4px;
+		top : 280px;
+		display : none;
+	}
+	
+	.tooltip-anchor, .tooltip-anchor-inner {
+		position: absolute; 
+		width:0; 
+		height:0; 
+		border-bottom-width: 0;
+		background: none;
+		border:1px solid #FED22F;
+		color:#363636;
+		border-bottom-width: 0;	
+	}
+	.tooltip-anchor {
+		border-left:0 none;
+		border-right:17px dotted transparent;
+		border-top-width:14px;
+		bottom:-14px;
+		left:1em;
+		margin:0;
+		right:auto;
+	}
+	.tooltip-anchor-inner {
+		border-left:0 none;
+		border-right:12px dotted transparent;
+		border-top:10px solid #FFFFFF;
+		bottom:auto;
+		border-top-color:#FFE45C;
+		border-top-style:solid;
+		border-top-width:10px;
+		left:2px;
+		top:-14px;
+	}
+	
+	.edge .z-cell,
+	.chrome .z-cell {
+	    position: relative;
+	}

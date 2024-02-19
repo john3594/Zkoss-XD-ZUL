@@ -1,0 +1,35 @@
+.spreadsheet-grid {
+    width: auto;
+    border-radius : 9px; /* Adjust the width as needed */
+    border-collapse: collapse;
+}
+
+.spreadsheet-grid th,
+.spreadsheet-grid td {
+    border: 1px solid #E5E7EB;
+    padding: 8px;
+    text-align: center;
+    color: black; /* Set font color to black */
+}
+
+.spreadsheet-grid th {
+    background-color: #EEF7ED;
+    font-weight: bold;
+    width: 80px; /* Set the width of "Name" column */
+    color : black;
+}
+.spreadsheet-grid td {
+    background-color: #EEF7ED;
+    font-weight: bold;
+    width: 80px; /* Set the width of "Name" column */
+}
+
+.spreadsheet-grid td :nth-child(even) {background-color: #F7F7F7;}
+.spreadsheet-grid .z-column {
+    text-align: center;
+    color : black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80px; /* Set the width of other columns */
+}

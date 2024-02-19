@@ -1,0 +1,256 @@
+<?link rel="stylesheet" type="text/css" href="/css/fontawesome.css"?>
+<zk xmlns:h="native">
+	<h:link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"/>
+	<style>
+		.time_info {
+			padding-left : 40px;
+			font-size : 14px;
+			
+		}
+		.calendar {
+			position:relative;
+			z-index:1;
+			float : right;!important;
+			right:2rem;
+			top:1.6rem;
+		}
+		.clock {
+			position:relative;
+			z-index:1;
+			float :right;
+			!important;
+			right:7rem;
+		}
+		.hours {
+			position:relative;
+			z-index:1;
+			float:right;!important;
+			color : #5BA948;
+		}
+        .wind {
+			margin-left: 40px;
+			margin-right: 40px;
+			border : "none";
+			width:768px;
+		}
+		.index-header-inner {
+			margin: auto;
+    		position: fixed; 
+    		top: 0; 
+    		left: 0; 
+    		right: 0; 
+    		height: 60px; 
+    		background-color: white; 
+    		color: white; 
+    		padding: 0 20px; 
+    		display: flex; 
+    		align-items: center; 
+    		justify-content: space-between; 
+    		z-index: 1000;
+		}
+		@media only screen and (max-width: 768px) {
+			.user_avatar {
+				display:flex;
+				max-width:100%;
+			}
+			.clock {
+				position:relative;
+				z-index:1;
+				float :right;
+				!important;
+				right:5.5rem;
+			}
+			.textbox {
+				padding : 0px;
+				margin-left : 0px;
+				margin-top:12px;
+				width:204px;
+				border-radius : 9px;
+			}
+			.time_info {
+				padding-left : 0px;
+				font-size : 10px;
+			}
+			
+		}
+		@media only screen and (min-width: 321px) {
+			.user_avatar {
+				display:flex;
+				max-width:100%;
+			}
+			.time_info {
+				padding-left : 0px;
+				font-size : 8px;
+			}
+			.textbox {
+				padding : 0px;
+				margin-left : 0px;
+				margin-top:12px;
+				width:204px;
+				border-radius : 9px;
+			}
+			
+		}
+		@media only screen and (max-width: 320px) {
+			.user_avatar {
+				display:flex;
+				max-width:100%;
+			}
+			.time_info {
+				padding-left : 0px;
+				font-size : 8px;
+			}
+			.textbox {
+				padding : 0px;
+				margin-left : 0px;
+				margin-top:1px;
+				width:150px;
+				border-radius : 9px;
+			}
+			.clock {
+				position:relative;
+				z-index:1;
+				float :right;
+				!important;
+				top : 2rem;
+				right:5.5rem;
+			}
+			.calendar {
+				position:relative;
+				z-index:1;
+				float : right;!important;
+				right:2rem;
+				top:1.5rem;
+			}
+		}
+		.textbox {
+				padding : 22px;
+				margin-left : 20px;
+				margin-top:12px;
+				width:204px;
+				border-radius : 9px;
+		}
+		.user_avatar {
+			display: flex; 
+			margin-top: 1.5rem;
+			border-radius: full;
+			align-items: center; 
+			width:768px;
+		}
+		.mydetail_label {
+			color:#5BA948;
+			margin-left:40px;
+			margin-top:46px;
+			font-size:1.5rem;
+		}
+		.pwd {
+			width:150px;
+			background-color:#5BA948;
+			padding:10px;
+			margin-right:40px;
+			font-size:14px;
+			float:right;!important
+		}
+
+		.logo {
+			width:80px;
+			margin-left:12px;
+		}
+		.user_info {
+			font-family:'Times New Roman';
+			font-size:1.5rem;
+			width: 768px;
+			padding-top: 30px;
+		    padding-right: 80px;
+		    padding-bottom: 30px;
+		    padding-left: 20px;
+			border: white;
+			border-radius : 20px;
+			box-shadow: 2px 2px 2px 2px #EFEFEF;
+			margin-bottom:1rem;
+		}
+		.avatar {
+			width:200px;
+			height=auto; 
+			position:relative;
+			border-radius:100%;
+		}
+		.edit_btn {
+			width:40px;
+			height:auto;
+			position:absolute;
+			top:10rem;
+			right:0.8rem;
+			z-index:1;
+			border-radius:100%;"
+		}
+	</style>
+	<window width="100%" height="auto"
+		border="none" sclass="wind">
+		<div sclass="index-header-inner">
+        <!-- Site Logo -->
+	        <div sclass="logo">
+	            <image src="/images/site_logo.png"/>
+	        </div>
+	        
+	        <!-- Notification Bell and User Avatar -->
+	        <div>
+	            <image src="https://img.icons8.com/puffy/32/000000/alarm.png" width="25px" height="auto" style="margin-right: 15px;"/>
+	            <image src="/images/avatar.png" width="30px" height="auto" style="margin-right: 15px;border-radius:100%"/>
+	            <image src="https://img.icons8.com/sf-black/64/menu.png" width="30px" height="auto" style="margin-right: 15px;"/>
+	        </div>
+	    </div>
+	 </window>
+	 <div style="margin-top:2rem">
+		 <label value="My Timesheet" sclass="mydetail_label"/>      
+	 </div>
+     <window width="100%" border="none" sclass="user_avatar">
+	    <grid width="100%px" height="auto" style="border:white">
+	            <rows>
+	                <row>
+	                    <div style="background-color : #EEF7ED; height:68px;width:100%">
+	                        <div style="position: relative; display: inline-block;">
+	                            <textbox sclass="textbox" placeholder="1/1/2024-1/2/2024"/>
+	                            <image src="/images/calendar.png" width="20px" sclass="calendar"  />
+	                        </div>
+	                    </div>
+	                </row>
+	            </rows>
+	    </grid>
+     	<div width="100%" style="margin-top:1rem">
+     		<div sclass="time_info">
+     			<label value="8th January - 14th January" sclass="timeinfo"/>
+     			<image src="/images/24.png" width="20px" sclass="clock"  />
+     			<label value="32 Hours" sclass="hours"/>
+     		</div>
+     		<div sclass="time_info">
+     			<image src="/images/grey.png" style="width:14px;margin-bottom:0.5rem;" />
+     			<label value="Unsubmitted" />
+     		</div>
+     	</div>
+     	<div width="100%" style="margin-top:1rem">
+     		<div sclass="time_info">
+     			<label value="8th January - 14th January" sclass="timeinfo"/>
+     			<image src="/images/24.png" width="20px" sclass="clock"  />
+     			<label value="40 Hours" sclass="hours"/>
+     		</div>
+     		<div sclass="time_info">
+     			<image src="/images/yellow.png" style="width:14px;margin-bottom:0.5rem;" />
+     			<label value="Approved by " /><label value="Richard Morrison" style="color:#5BA948"/><label value="on" /><label value="10:00 AM, 4th January" style="color:#5BA948"/>
+     			
+     		</div>
+     	</div>
+     	<div width="100%" style="margin-top:1rem">
+     		<div sclass="time_info">
+     			<label value="8th January - 14th January" sclass="timeinfo"/>
+     			<image src="/images/24.png" width="20px" sclass="clock"  />
+     			<label value="40 Hours" sclass="hours"/>
+     		</div>
+     		<div sclass="time_info">
+     			<image src="/images/green.png" style="width:14px;margin-bottom:0.5rem;" />
+     			<label value="Submitted on" /><label value="10:00 AM, 4th January" style="color:#5BA948"/>     			
+     		</div>
+     	</div>
+	</window>
+	
+</zk>

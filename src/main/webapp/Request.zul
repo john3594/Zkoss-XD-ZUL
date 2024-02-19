@@ -1,0 +1,122 @@
+
+<zk>
+    <style src="/css/Request.css" />
+    <style src="/css/spreadsheet-grid.css"/>
+    <window>
+        <div sclass="container">
+        	<div>
+	        	<!-- back redirect button -->
+	            <image src="/images/back.png" width="40" />
+	            <label value="Request Time Off" style="margin-left: 18px;font-size:26px;" />
+        	</div>
+            <div>
+            	 <!-- Selection tag for time off type -->
+	            <combobox style="width:728px;margin-top:35px;margin-bottom:14px;">
+	                <comboitem label="Sick Leave" value="sick" />
+	                <comboitem label="Vacation" value="vacation" />
+	                <comboitem label="Personal Time" value="personal" />
+	            </combobox>
+	            <datebox style="width:300px; margin-right:5px;float:left;!important;margin-bottom:14px;"/>
+	            <datebox style="width:300px; float:right;!important;margin-bottom:14px;"/>
+	            <timebox style="width:300px; margin-right:5px;float:left;!important;margin-bottom:14px;"/>
+	            <timebox style="width:300px; float:right;!important;margin-bottom:14px;"/>
+            </div>
+	        <div >
+	        	<!-- Paragraph tag -->
+            	<textbox style="width:728px; border : solid 1px #DBDBDB;border-radius:9px;padding-top:25px; padding-left:20px; padding-bottom:45px;padding-right:20px; display:flex;" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut." />
+	        </div>
+            <!-- Green request time off button -->
+            <button sclass="green-button" label="Request Time Off"/>
+            <div style="width:768px;display:flex;">
+            	<div sclass="days" style="color:white;font-style:bold;">
+	           		<label value="4 Days" style="font-size:24px;padding-left : 30px;position : absolute;"/>
+	           		<label value="Current Balance" style="font-size:14px;position : relative;Top : 24px;left : 30px;"/>
+		        </div>
+	            <div sclass="days" style="color:white;font-style:bold;">
+		           <label value="2 Days" style="font-size:24px;padding-left : 30px;position : absolute;" />
+		           <label value="Balance If Approved" style="font-size:14px;position : relative;Top : 24px;left : 30px;left : 30px;"/>
+		        </div>
+            </div>
+	        <div>
+	        	<label value="Hilly Farm, Crop Production Leave" style="font-size:14px;color : #5BA948"/>
+	        </div>
+	        
+	        <!-- data table sheet -->
+			<grid sclass="spreadsheet-grid">
+				<frozen style="background: white" columns="1">
+					<div style="padding: 200px;" />
+				</frozen>
+		        <columns sclass="months">
+		        	 <column>
+		        	 	<label value="Name" style="width:200px;!important"/>
+		        	 </column>
+		             <forEach begin="1" end="31" step="1" var="day">
+			            <column>
+			                <label value="${day}" />
+			              
+			            </column>
+			        </forEach>
+		        </columns>
+		        <rows>
+
+		                <row>
+		                    <label value="Gerald Fennell" style="width:200px;!important"/>
+		                    <forEach begin="1" end="31" step="1" var="day1">
+		                        <label value="" />
+		                    </forEach>
+		                </row>
+		                <row>
+		                    <label value="Wiliam Melton" style="width:200px;!important"/>
+		                    <forEach begin="1" end="31" step="1" var="day2">
+		                        <label value="" />
+		                    </forEach>
+		                </row><row>
+		                    <label value="James Tony" style="width:200px;!important"/>
+		                    <forEach begin="1" end="31" step="1" var="day3">
+		                        <label value="" />
+		                    </forEach>
+		                </row>
+		            
+		        </rows>
+		        
+		    </grid>
+        </div>
+        <zscript>
+		        <![CDATA[
+		            String getDayOfWeek(int number) {
+		                int remainder = number % 7;
+		                String dayOfWeek = "";
+		                switch (remainder) {
+		                    case 0:
+		                        dayOfWeek = "Sun";
+		                        break;
+		                    case 1:
+		                        dayOfWeek = "Mon";
+		                        break;
+		                    case 2:
+		                        dayOfWeek = "Tue";
+		                        break;
+		                    case 3:
+		                        dayOfWeek = "Wed";
+		                        break;
+		                    case 4:
+		                        dayOfWeek = "Thu";
+		                        break;
+		                    case 5:
+		                        dayOfWeek = "Fri";
+		                        break;
+		                    case 6:
+		                        dayOfWeek = "Sat";
+		                        break;
+		                }
+		                return dayOfWeek;
+		            }
+		        ]]>
+		    </zscript>
+    </window>
+    
+</zk>
+
+
+
+
