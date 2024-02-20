@@ -13,19 +13,19 @@
         }
         /* Button styles */
         .green-button {
-            background-color: #5BA948;
-            color: white;
-            padding: 20px 60px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            display : flex;
-            align-items: center;
-            justify-content : center;
-            margin-top : 30px;
-            margin-left: auto;
-			margin-right: auto;
-			width: 50%;
+		    background-color: #5BA948;
+		    color: white;
+		    padding-top: 13px;
+		    border: none;
+		    border-radius: 14px;
+		    cursor: pointer;
+		    align-items: center;
+		    justify-content: center;
+		    margin-top: 30px;
+		    margin-left: auto;
+		    margin-right: auto;
+		    width: 46%;
+		    font-size : 20px;
         }
         /* Selection tag and div tag styles */
       	.days {

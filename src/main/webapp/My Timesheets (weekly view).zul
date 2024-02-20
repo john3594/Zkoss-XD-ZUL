@@ -237,7 +237,6 @@
      		<div sclass="time_info">
      			<image src="/images/yellow.png" style="width:14px;margin-bottom:0.5rem;" />
      			<label value="Approved by " /><label value="Richard Morrison" style="color:#5BA948"/><label value="on" /><label value="10:00 AM, 4th January" style="color:#5BA948"/>
-     			
      		</div>
      	</div>
      	<div width="100%" style="margin-top:1rem">
