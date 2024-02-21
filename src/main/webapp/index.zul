@@ -3,81 +3,17 @@
     <style src="/css/Request.css" />
     <style src="/css/spreadsheet-grid.css"/>
     <style>
-	    .wind {
-				margin-left: 40px;
-				margin-right: 40px;
-				border : "none";
-				width : 100%;
-				max-width:768px;
-		}
-		.index-header-inner {
-			margin: auto;
-    		position: fixed; 
-    		top: 0; 
-    		left: 0; 
-    		right: 0; 
-    		height: 60px; 
-    		background-color: white; 
-    		color: white; 
-    		padding: 0 20px; 
-    		display: flex; 
-    		align-items: center; 
-    		justify-content: space-between; 
-    		z-index: 1000;
-		}
-		.logo {
-			width:80px;
-			margin-left:12px;
-		}
-    	.container1 {
-		    display: flex;
-		    flex-wrap: wrap;
-		    justify-content: center; /* Center the items horizontally */
-		}
-		
-		.column {
-		    flex: 1;
-		    margin: 0 1rem; /* Adjust spacing between columns */
-		}
     	.container {
             width: 100%;
             max-width: 768px;
             margin: auto;
         }
-        .btn {
-        	color : black;
-        	margin : auto;
-        	width:50%;
-        	padding-top : 20px;
-        	padding-bottom : 20px;
-        	aligh-items : center;
-        	background-color : #F0F0F0;
-        	border : #F0F0F0;
-        	border-radius : 12px;
-        }
-        .btn:hover {
-        	background-color : #EEF7ED;
-        	color : black;
-        }
-        .taskName {
-        	width:100%;
-        	padding-top : 30px;
-        	padding-bottom : 30px;
-        	background-color : #F0F0F0;
-        	border : #F0F0F0;
-        	border-radius : 12px;
-        	margin-bottom : 2rem;
-        }
         .week {
         	width: calc((100% - 7rem) / 7);
         	margin-right: 1rem;
-        	display : flex;
-        	flex : 1;
-        	flex-wrap: wrap;
         }
         .rect {
         	display : flex;
-        	flex : 1;
        		justify-content : center;
        		align-items : center;
         	height: 50%; 
@@ -89,162 +25,232 @@
         	border: 1px solid #EEF7EE;
         	background-color : #EEF7EE;
         }
-        @media screen and (max-width: 900px) {
-			.column {
-		        flex-basis: 33%; /* Each column takes full width on smaller screens */
-		        margin: 0.5rem 0; /* Adjust spacing between columns */
-		    }
-		    .rect {
-		    	flex-basis: 14%
-		    	margin : 0.1rem 0;
-		    }
-			.green-button {
-        		font-size : 18px;
-        	}
-            .container {
-                padding: 0 0px;
-            }
-            .para {
-                font-size: 1.2rem;
-                padding: 20px;
-            }
-            .btn {
-	        	width:80%;
-	        	max-width : 768px;
-	        	display : flex;
-	        	aligh-items : center;
-			    justify-content:center;
-	        	margin : auto;
-	        	padding : auto;
-            }
-        }
+    	.para {
+    		font-family:'Times New Roman';
+			font-size:1.5rem;
+			width: 768px;
+			padding-top: 30px;
+		    padding-right: 80px;
+		    padding-bottom: 30px;
+		    padding-left: 20px;
+			border: white;
+			border-radius : 20px;
+			box-shadow: 2px 2px 2px 2px #EFEFEF;
+			margin-bottom:1rem;
+    	}
+    	.clock {
+		    position: relative;
+		    z-index: 1;
+		    float: right;
+		    right: 2.5rem;
+		    top: -1rem;
+		}
+		.timesheet {
+		    position: relative;
+		    z-index: 1;
+		    right: -7.5rem;
+    		top: 2.8rem;
+		}
+		.trash {
+		    position: relative;
+		    bottom: 0rem;
+		    border-radius: 100%;
+		    left: 4rem;
+		    float: right;
+		    width: 30px;
+		    height: 30px;
+		}
+		.hours {
+		    position: relative;
+		    z-index: 1;
+		    top: -1rem;
+		    float: right;
+		    color: #5BA948;
+		    left: 5.5rem;
+		}
+		.btn_text {
+			margin-left: 18px;
+			font-size:26px;
+		}
 		@media screen and (max-width: 768px) {
-			.column {
-		        flex-basis: 33.3%; /* Each column takes full width on smaller screens */
-		        margin: 0.5rem 0; /* Adjust spacing between columns */
-		    }
-		    .rect {
-		    	flex-basis: 14%
-		    	margin : 0.1rem 0;
-		    }
 			.green-button {
-        		font-size : 18px;
+        		font-size : 12px;
         	}
             .container {
-                padding: 0 0px;
+                padding: 0 10px;
             }
             .para {
                 font-size: 1.2rem;
                 padding: 20px;
             }
-            .btn {
-	        	width:80%;
-	        	max-width : 768px;
-	        	display : flex;
-			    justify-content:center;
-	        	margin : auto;
-	        	aligh-items : center;
-	        	padding : auto;
+            .clock {
+                left: 0.5rem;
+    			bottom: 0.5rem;
+            }
+            .trash {
+            	left: 0.5rem;
+    			bottom: 0.5rem;
+            }
+            .hours {
+            	left: 0.5rem;
+    			bottom: 0.5rem;
+            }
+            .timesheet {
+            	 top:2.6rem;
             }
         }
         @media screen and (max-width: 480px) {
-        	.column {
-		        flex-basis: 33.3%; /* Each column takes full width on smaller screens */
-		        margin: 0.5rem 0; /* Adjust spacing between columns */
-		    }
-		    .rect {
-		    	flex-basis: 25%
-		    	margin : 0.3rem 0;
-		    }
         	.green-button {
-        		width : 150%;
-        		font-size : 18px;
+        		font-size : 12px;
         		display: inline-flex;
     			flex-direction: column;
         	}
-        	.container {
-                padding: 0 0px;
-            }
             .para {
                 font-size: 0.6rem;
             }
-            .btn {
-	        	width: 90%;
-			    max-width: 480px;
-			   	display : flex;
-			    justify-content:center;
-			    margin: auto;
-			    aligh-items : center;
-			    padding: auto;
+            .clock {
+                left: 0.5rem;
+    			top: 0rem;
+            }
+            .trash {
+            	left: 0.5rem;
+    			top: -0.5rem;
+            }
+            .hours {
+            	left: 0.5rem;
+    			top: 0rem;
+            }
+            .timesheet {
+            	 right: -2rem;
+    			 top: 2.5rem;
             }
         }
         @media screen and (max-width: 320px) {
-        	.column {
-		        flex-basis: 33.3%; /* Each column takes full width on smaller screens */
-		        margin: 0.5rem 0; /* Adjust spacing between columns */
-		    }
-		    .rect {
-		    	flex-basis: 25%
-		    	margin : 0.2rem 0;
-		    }
         	.green-button {
-        		width : 150%;
-        		justify-content : center;
-        		font-size : 18px;
+        		font-size : 10px;
         		display: inline-flex;
     			flex-direction: column;
         	}
-        	.container {
-                padding: 0 0px;
-            }
             .para {
                 font-size: 0.5rem;
             }
-            .btn {
-	        	width:100%;
-	        	display : flex;
-			    justify-content:center;
-			    aligh-items : center;
-	        	max-width : 320px;
-	        	margin : auto;
-	        	padding : auto;
+            .clock {
+                left: 0.5rem;
+    			top: 0rem;
+            }
+            .trash {
+            	left: 0.5rem;
+    			top: -0.5rem;
+            }
+            .hours {
+            	left: 0.5rem;
+    			top: 0rem;
+            }
+            .timesheet {
+    			 top: 2.5rem;
+    			 right: 8.25rem;
             }
         }
     </style>
-   
-    <window width="768px" height="auto"
-		border="none" sclass="wind">
-		<charts id="chart" type="pie" width="480"
-            height="300" title="Pie Chart Demo" apply="org.zkoss.zkcharts.essentials.model.PieChartComposer"/>
-		<div sclass="index-header-inner">
-        <!-- Site Logo -->
-	        <div sclass="logo">
-	            <image src="/images/site_logo.png"/>
-	        </div>
-	        
-	        <!-- Notification Bell and User Avatar -->
-	        <div>
-	            <image src="https://img.icons8.com/puffy/32/000000/alarm.png" width="25px" height="auto" style="margin-right: 15px;"/>
-	            <image src="/images/avatar.png" width="30px" height="auto" style="margin-right: 15px;border-radius:100%"/>
-	            <image src="https://img.icons8.com/sf-black/64/menu.png" width="30px" height="auto" style="margin-right: 15px;"/>
-	        </div>
-	    </div>
-	 </window>
     <window>
         <div sclass="container" id="daily">
         	<div>
 	        	<!-- back redirect button -->
 	            <image src="/images/back.png" width="40" />
-	            <label value="New Timesheet Event" />
-        	</div>          
-            <div style="display: flex;justify-content: center; align-items: center; width: 100%; margin-top:2rem;">
+	            <label value="New TimeSheet Event" style="" />
+        	</div>
+            <div style="margin-bottom:6rem;">
+            	<button   label="New TimeSheet Event" style="float:left;!important;" sclass="green-button"/>
+            	<button   label="Submit TimeSheet" style="float:right;!important;" sclass="green-button"/>
+            	<image src="/images/timesheet.png" width="20px" sclass="timesheet"  />
+            </div>
+            <div >
+            	<label value="Weekly" style="position:relative;float:right;"/>
+             	<label value="Daily" style="position:relative;float:right;right:4rem;"/>
+             	<checkbox mold="switch" width="10px" checked="false" style="position:relative;z-index:1;float:right;!important;right:1rem;bottom:0.5rem;"/>
+            </div>
+           
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+            	<image src="/images/bac.png" style="width:30px;height:auto;margin-right:20px;"/>
             	<label value="Monday 1st January" />
             	<image src="/images/forward.png" style="width:30px;height:auto;margin-left:20px;"/>
             </div>
+	       	
+	       	<div sclass="para" width="100%" style="margin-top:1rem">
+	     		<div>
+	     			<image src="/images/trash.png" width="30px" height="30px" sclass="trash" />
+		     		<label value="9:00 AM on 10/01/2024 - 7:00 PM on 13/01/2024" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+	     		</div>
+	     		<div>
+	     			<image src="/images/clock.png" width="20px" height="auto" style="margin-left: 10px" />
+	     			<label value="07:00 AM - 10:00 AM" style="padding-left:0.5rem;font-size:1rem;"/>
+	     			<div>
+	     				<image src="/images/24.png" width="20px" sclass="clock"  />
+     					<label value="3 hours" sclass="hours"/>
+	     			</div>
+	     		</div>
+	     	</div>
+	     	<div sclass="para" width="100%" height="220px;" style="margin-top:1rem">
+	     		<div>
+		     		<label value="Ploughing" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+		     		<image src="/images/trash.png" width="30px" height="30px" sclass="trash" />
+	     		</div>
+	     		<div >
+	     			<image src="/images/clock.png" width="20px" height="auto" style="margin-left: 10px" />
+	     			<label value="11:00 AM - 19:45 PM" style="padding-left:0.5rem;font-size:1rem;"/>
+	     			<div >
+	     				<image src="/images/24.png" width="20px" sclass="clock"  />
+     					<label value="8hours45 min." sclass="hours"/>
+	     			</div>
+	     		</div>
+	     	</div>
+	     	<!-- add three block -->
+	     	<div sclass="para" width="100%" height="80px;" style="margin-top:1rem;background-color:#78C965">
+	     		<div>
+		     		<label value="Standard" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+		     		<label value="7.8" style="font-size: 24px;font-weight: bold;float: right;margin-right: 0px;margin-top: -12px;"/>
+	     		</div>
+	     		<div>
+		     		<label value="Hours" style="font-size: 24px;font-weight: bold;float: right;margin-right: -1px;margin-top: -3px;float:right;!important;"/>
+	     		</div>
+	     	</div>
+	     	<div sclass="para" width="100%" height="80px;" style="margin-top:1rem;background-color:#F1C40F">
+	     		<div>
+		     		<label value="Overtime" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+		     		<label value="2.95" style="font-size: 24px;font-weight: bold;float: right;margin-right: 0px;margin-top: -12px;"/>
+	     		</div>
+	     		<div>
+		     		<label value="Hours" style="font-size: 24px;font-weight: bold;float: right;margin-right: -1px;margin-top: -3px;float:right;!important;"/>
+	     		</div>
+	     	</div>
+	     	<div sclass="para" width="100%" height="80px;" style="margin-top:1rem;background-color:#FF8E83">
+	     		<div>
+		     		<label value="Weekends" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+		     		<label value="0" style="font-size: 24px;font-weight: bold;float: right;margin-right: 0px;margin-top: -12px;"/>
+	     		</div>
+	     		<div>
+		     		<label value="Hours" style="font-size: 24px;font-weight: bold;float: right;margin-right: -1px;margin-top: -3px;float:right;!important;"/>
+	     		</div>
+	     	</div>
         </div>
         
 		<!--         daily,weekly conversion -->
-        <div sclass="container" id="weekly" style="margin-top:2rem;">
+        <div sclass="container" id="weekly">
+        	<div>
+	        	<!-- back redirect button -->
+	            <image src="/images/back.png" width="30" />
+	            <label value="8th January - 14th January" />
+        	</div>
+            <div style="margin-bottom:6rem;">
+            	<button   label="New TimeSheet Event" style="float:left;!important;" sclass="green-button"/>
+            	<button   label="Submit TimeSheet" style="float:right;!important;" sclass="green-button"/>
+            	<image src="/images/timesheet.png" width="20px" sclass="timesheet"  />
+            </div>
+            <div >
+            	<label value="Weekly" style="position:relative;float:right;"/>
+             	<label value="Daily" style="position:relative;float:right;right:4rem;"/>
+             	<checkbox mold="switch" width="10px" checked="true" style="position:relative;z-index:1;float:right;!important;right:1rem;bottom:0.5rem;"/>
+            </div>
 			<!--weekly view -->
            <div width="100%" height="200px" style="display: flex; justify-content: space-between;">
 		        <div sclass="week">
@@ -325,42 +331,62 @@
 					</div>
 		        </div>
 		    </div>
-		    <div sclass="container">
-		    	<div >
-		    		<textbox placeholder="Task Name" sclass="taskName"/>
-		    	</div>
-		    	<div>
-		    		<div style="float:left;width:40%;">
-		    			<textbox placeholder="Start Time" sclass="taskName"/>
-		    		</div>
-		    		<div style="float:right;width:40%;">
-		    			<textbox placeholder="End Time" sclass="taskName"/>
-		    		</div>
-		    	</div>
-		    </div>
-		    <div sclass="container">
-		    	<div  >
-		    		<textbox placeholder="Comment" sclass="taskName" rows="5" cols="50" style="resize : none;"/>
-		    	</div>
-		    </div>
-			<div sclass="container1">
-			    <div sclass="column">
-			        <!-- Content for the first column -->
-			        <button label="Standard" sclass="btn"/>
-			    </div>
-			    <div sclass="column">
-			        <!-- Content for the second column -->
-			        <button label="Overtime" sclass="btn"/>
-			    </div>
-			    <div sclass="column">
-			        <!-- Content for the third column -->
-			        <button label="Weekends" sclass="btn"/>
-			    </div>
-			</div>
-			<div style="display: flex; margin-top : 2rem;">
-			    <button label="Submit Timesheet Event" sclass="green-button" style="padding:25px;"/>
-			</div>
-		    
+	       	<div sclass="para" width="100%" style="margin-top:1rem">
+	     		<div>
+		     		<label value="Ploughing" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+		     		<image src="/images/trash.png" width="30px" height="30px" sclass="trash" />
+	     		</div>
+	     		<div>
+	     			<image src="/images/clock.png" width="20px" height="auto" style="margin-left: 10px" />
+	     			<label value="07:00 AM - 10:00 AM" style="padding-left:0.5rem;font-size:1rem;"/>
+	     			<div>
+	     				<image src="/images/24.png" width="20px" sclass="clock"  />
+     					<label value="3 hours" sclass="hours"/>
+	     			</div>
+	     		</div>
+	     	</div>
+	     	<div sclass="para" width="100%" height="220px;" style="margin-top:1rem">
+	     		<div>
+		     		<label value="Ploughing" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+		     		<image src="/images/trash.png" width="30px" height="30px" sclass="trash" />
+	     		</div>
+	     		<div >
+	     			<image src="/images/clock.png" width="20px" height="auto" style="margin-left: 10px" />
+	     			<label value="11:00 AM - 19:45 PM" style="padding-left:0.5rem;font-size:1rem;"/>
+	     			<div >
+	     				<image src="/images/24.png" width="20px" sclass="clock"  />
+     					<label value="8hours45 min." sclass="hours"/>
+	     			</div>
+	     		</div>
+	     	</div>
+	     	<!-- add three block -->
+	     	<div sclass="para" width="100%" height="80px;" style="margin-top:1rem;background-color:#78C965">
+	     		<div>
+		     		<label value="Standard" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+		     		<label value="7.8" style="font-size: 24px;font-weight: bold;float: right;margin-right: 0px;margin-top: -12px;"/>
+	     		</div>
+	     		<div>
+		     		<label value="Hours" style="font-size: 24px;font-weight: bold;float: right;margin-right: -1px;margin-top: -3px;float:right;!important;"/>
+	     		</div>
+	     	</div>
+	     	<div sclass="para" width="100%" height="80px;" style="margin-top:1rem;background-color:#F1C40F">
+	     		<div>
+		     		<label value="Overtime" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+		     		<label value="2.95" style="font-size: 24px;font-weight: bold;float: right;margin-right: 0px;margin-top: -12px;"/>
+	     		</div>
+	     		<div>
+		     		<label value="Hours" style="font-size: 24px;font-weight: bold;float: right;margin-right: -1px;margin-top: -3px;float:right;!important;"/>
+	     		</div>
+	     	</div>
+	     	<div sclass="para" width="100%" height="80px;" style="margin-top:1rem;background-color:#FF8E83">
+	     		<div>
+		     		<label value="Weekends" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+		     		<label value="0" style="font-size: 24px;font-weight: bold;float: right;margin-right: 0px;margin-top: -12px;"/>
+	     		</div>
+	     		<div>
+		     		<label value="Hours" style="font-size: 24px;font-weight: bold;float: right;margin-right: -1px;margin-top: -3px;float:right;!important;"/>
+	     		</div>
+	     	</div>
         </div>
     </window>
 </zk>

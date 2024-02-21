@@ -12,7 +12,7 @@ public class PieChartComposer extends SelectorComposer<Component> {
 
     public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp);
-
+        
         PieModel model = new DefaultPieModel();
         model.setValue("C/C++", new Double(12.5));
         model.setValue("Java", new Double(50.2));

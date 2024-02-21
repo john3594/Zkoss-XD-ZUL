@@ -178,8 +178,8 @@
 	       	
 	       	<div sclass="para" width="100%" style="margin-top:1rem">
 	     		<div>
-		     		<label value="Ploughing" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
-		     		<image src="/images/trash.png" width="30px" height="30px" sclass="trash" />
+	     			<image src="/images/red.png" width="10px" height="30px" sclass="trash" />
+		     		<label value="9:00 AM on 10/01/2024 - 7:00 PM on 13/01/2024" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
 	     		</div>
 	     		<div>
 	     			<image src="/images/clock.png" width="20px" height="auto" style="margin-left: 10px" />

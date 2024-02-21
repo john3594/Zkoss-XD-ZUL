@@ -42,79 +42,59 @@
 	        </div>
 	        
 	        <!-- data table sheet -->
-			<grid sclass="spreadsheet-grid">
-				<frozen style="background: white" columns="1">
-					<div style="padding: 200px;" />
-				</frozen>
-		        <columns sclass="months">
-		        	 <column>
-		        	 	<label value="Name" style="width:200px;!important"/>
-		        	 </column>
-		             <forEach begin="1" end="31" step="1" var="day">
-			            <column>
-			                <label value="${day}" />
-			              
-			            </column>
-			        </forEach>
-		        </columns>
-		        <rows>
-
-		                <row>
-		                    <label value="Gerald Fennell" style="width:200px;!important"/>
+			<grid width="740px;" sclass="spreadsheet-grid">
+					<frozen style="background: white" columns="1">
+						<div style="width: 200px;" />
+					</frozen>
+			        <columns style="background-color: white">
+			        	 <column width="130px">
+			        	 	<label value="Name"  style="color:black;"/>
+			        	 </column>
+			             <forEach begin="1" end="31" step="1" var="day">
+				            <column width="100px">
+				            	
+				            	<div sclass="z-label">
+				            		<label  value="${day}" style="color:black"/>
+				            	</div>
+				            </column>
+				        </forEach>
+			        </columns>
+		        	<rows >
+		                <row >
+		                    <label value="Gerald Fennell" style="color:black;"/>
 		                    <forEach begin="1" end="31" step="1" var="day1">
-		                        <label value="" />
+		                        <label value="" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
 		                    </forEach>
 		                </row>
 		                <row>
-		                    <label value="Wiliam Melton" style="width:200px;!important"/>
+		                    <label value="Wiliam Melton" style="color:black;"/>
 		                    <forEach begin="1" end="31" step="1" var="day2">
-		                        <label value="" />
-		                    </forEach>
-		                </row><row>
-		                    <label value="James Tony" style="width:200px;!important"/>
-		                    <forEach begin="1" end="31" step="1" var="day3">
-		                        <label value="" />
+		                        <label value="" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
 		                    </forEach>
 		                </row>
-		            
-		        </rows>
-		        
+		                <row >
+		                    <label value="James Tony" style="color:black;"/>
+		                    <forEach begin="1" end="31" step="1" var="day3">
+		                        <label value="" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
+		                    </forEach>
+		                </row>
+		        	</rows>
 		    </grid>
-        </div>
-        <zscript>
-		        <![CDATA[
-		            String getDayOfWeek(int number) {
-		                int remainder = number % 7;
-		                String dayOfWeek = "";
-		                switch (remainder) {
-		                    case 0:
-		                        dayOfWeek = "Sun";
-		                        break;
-		                    case 1:
-		                        dayOfWeek = "Mon";
-		                        break;
-		                    case 2:
-		                        dayOfWeek = "Tue";
-		                        break;
-		                    case 3:
-		                        dayOfWeek = "Wed";
-		                        break;
-		                    case 4:
-		                        dayOfWeek = "Thu";
-		                        break;
-		                    case 5:
-		                        dayOfWeek = "Fri";
-		                        break;
-		                    case 6:
-		                        dayOfWeek = "Sat";
-		                        break;
-		                }
-		                return dayOfWeek;
-		            }
-		        ]]>
-		    </zscript>
+		    <div>
+		        <image src="/images/non-working.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
+		        <label value="non-working" />
+		        <image src="/images/blue_rect.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
+		        <label value="Sick Leave" />
+		        <image src="/images/red_rect.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
+		   		<label value="Leave" />
+		   </div>
+		 </div>
     </window>
-    
+    <zscript>
+		void move(Component dragged) {
+			self.parent.insertBefore(dragged, self);				
+		}
+	</zscript>  
 </zk>
 
 

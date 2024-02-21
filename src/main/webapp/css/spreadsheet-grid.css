@@ -2,34 +2,48 @@
     width: auto;
     border-radius : 9px; /* Adjust the width as needed */
     border-collapse: collapse;
+    border : 1px solid #ccd5ac;
 }
 
 .spreadsheet-grid th,
 .spreadsheet-grid td {
-    border: 1px solid #E5E7EB;
+    border: 2px grey;
     padding: 8px;
+    align-items : center;
+    justify-content : center;
     text-align: center;
-    color: black; /* Set font color to black */
 }
 
 .spreadsheet-grid th {
-    background-color: #EEF7ED;
+	border : 1px solid #ccd5ac;
+    background-color: white;
     font-weight: bold;
     width: 80px; /* Set the width of "Name" column */
-    color : black;
 }
 .spreadsheet-grid td {
-    background-color: #EEF7ED;
+	border : 1px solid #ccd5ac;
+    background-color:white;
     font-weight: bold;
     width: 80px; /* Set the width of "Name" column */
 }
 
-.spreadsheet-grid td :nth-child(even) {background-color: #F7F7F7;}
-.spreadsheet-grid .z-column {
+.spreadsheet-grid {
+	background-color : white;
+	border-collapse:collapse;
+	border : 2px solid black;
     text-align: center;
-    color : black;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 80px; /* Set the width of other columns */
+}
+.z-column {
+	color : blcak;
+    background: #fff;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
 }
