@@ -26,19 +26,19 @@
             	<textbox style="width:728px; border : solid 1px #DBDBDB;border-radius:9px;padding-top:25px; padding-left:20px; padding-bottom:45px;padding-right:20px; display:flex;" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut." />
 	        </div>
             <!-- Green request time off button -->
-            <button sclass="green-button" label="Request Time Off"/>
+            <button sclass="green-button" label="Request Time Off" style="display:flex"/>
             <div style="width:768px;display:flex;">
             	<div sclass="days" style="color:white;font-style:bold;">
-	           		<label value="4 Days" style="font-size:24px;padding-left : 30px;position : absolute;"/>
-	           		<label value="Current Balance" style="font-size:14px;position : relative;Top : 24px;left : 30px;"/>
+	           		<label value="4 Days" style="font-size:24px;padding-left : 30px;margin-top: -19px;"/>
+	           		<label value="Current Balance" style="font-size:14px;position : relative;Top : 24px;left: -4.5rem;"/>
 		        </div>
 	            <div sclass="days" style="color:white;font-style:bold;">
-		           <label value="2 Days" style="font-size:24px;padding-left : 30px;position : absolute;" />
-		           <label value="Balance If Approved" style="font-size:14px;position : relative;Top : 24px;left : 30px;left : 30px;"/>
+		           <label value="2 Days" style="font-size:24px;padding-left : 30px;margin-top: -19px;" />
+		           <label value="Balance If Approved" style="font-size:14px;position : relative;Top : 24px;left: -4.5rem;"/>
 		        </div>
             </div>
 	        <div>
-	        	<label value="Hilly Farm, Crop Production Leave" style="font-size:14px;color : #5BA948"/>
+	        	<label value="Hilly Farm, Crop Production Leave" style="font-size: 27px;color : #5BA948"/>
 	        </div>
 	        
 	        <!-- data table sheet -->
@@ -52,7 +52,6 @@
 			        	 </column>
 			             <forEach begin="1" end="31" step="1" var="day">
 				            <column width="100px">
-				            	
 				            	<div sclass="z-label">
 				            		<label  value="${day}" style="color:black"/>
 				            	</div>

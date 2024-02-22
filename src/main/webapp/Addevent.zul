@@ -314,8 +314,7 @@
 			</div>
 			<div style="display: flex; margin-top : 2rem;">
 			    <button label="Submit Timesheet Event" sclass="green-button" style="padding:25px;"/>
-			</div>
-		    
+			</div>		    
         </div>
     </window>
 </zk>

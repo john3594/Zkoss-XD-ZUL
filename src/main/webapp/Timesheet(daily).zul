@@ -1,15 +1,13 @@
 
-
 <zk>
     <style src="/css/Request.css" />
     <style src="/css/spreadsheet-grid.css"/>
     <style src="/css/dayofweek.css" />
-        <div id="daily" sclass="container">
-        <div>
-        	<div style="margin-top:4rem;">
+   <div sclass="container" id="daily">
+        	<div>
 	        	<!-- back redirect button -->
 	            <image src="/images/back.png" width="40" />
-	            <label value="New TimeSheet Event"/>
+	            <label value="New TimeSheet Event" style="" />
         	</div>
             <div style="margin-bottom:6rem;">
             	<button   label="New TimeSheet Event" style="float:left;!important;" sclass="green-button"/>
@@ -83,17 +81,14 @@
 		     		<label value="Hours" style="font-size: 24px;font-weight: bold;float: right;margin-right: -1px;margin-top: -3px;float:right;!important;"/>
 	     		</div>
 	     	</div>
-	     	</div>
         </div>
-        
-        <div sclass="container" id="conv1"></div>
+		<div sclass="container" id="conv3"></div>
         <zscript>
 		  display() {
 		  	 daily.removeChild(daily.firstChild);
-		 	 conv1.appendChild(Executions.createComponents("Timesheet(weekly).zul", conv1, null));
+		 	 conv3.appendChild(Executions.createComponents("Timesheet(weekly).zul", conv3, null));
 		  }
 		</zscript>
-    
 </zk>
 
 

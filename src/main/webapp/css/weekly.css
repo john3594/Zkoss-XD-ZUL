@@ -1,0 +1,150 @@
+@charset "UTF-8";
+.container {
+            width: 100%;
+            max-width: 768px;
+            margin: auto;
+        }
+        .week {
+        	width: calc((100% - 7rem) / 7);
+        	margin-right: 1rem;
+        }
+        .rect {
+        	display : flex;
+       		justify-content : center;
+       		align-items : center;
+        	height: 50%; 
+        	border: 1px solid #FAFAFA;
+        	border-radius : 9px;
+        	background-color : #FAFAFA;
+        }
+        .rect:hover {
+        	border: 1px solid #EEF7EE;
+        	background-color : #EEF7EE;
+        }
+    	.para {
+    		font-family:'Times New Roman';
+			font-size:1.5rem;
+			width: 768px;
+			padding-top: 30px;
+		    padding-right: 80px;
+		    padding-bottom: 30px;
+		    padding-left: 20px;
+			border: white;
+			border-radius : 20px;
+			box-shadow: 2px 2px 2px 2px #EFEFEF;
+			margin-bottom:1rem;
+    	}
+    	.clock {
+		    position: relative;
+		    z-index: 1;
+		    float: right;
+		    right: 2.5rem;
+		    top: 1rem;
+		}
+		.timesheet {
+    		top: 1.5rem;
+		    position: relative;
+		    z-index: 1;
+		    right: -7.5rem;
+		}
+		.trash {
+		    position: relative;
+		    bottom: 0rem;
+		    border-radius: 100%;
+		    left: 4rem;
+		    float: right;
+		    width: 30px;
+		    height: 30px;
+		}
+		.hours {
+		    position: relative;
+		    z-index: 1;
+		    top: 1rem;
+		    float: right;
+		    color: #5BA948;
+		    left: 5.5rem;
+		}
+		.btn_text {
+			margin-left: 18px;
+			font-size:26px;
+		}
+		@media screen and (max-width: 768px) {
+			.green-button {
+        		font-size : 12px;
+        	}
+            .container {
+                padding: 0 10px;
+            }
+            .para {
+                font-size: 1.2rem;
+                padding: 20px;
+            }
+            .clock {
+                left: 0.5rem;
+    			bottom: 2rem;
+            }
+            .trash {
+            	left: 0.5rem;
+    			bottom: 0.5rem;
+            }
+            .hours {
+            	left: -0.5rem;
+    			bottom: 0.5rem;
+            }
+            .timesheet {
+            	 top: 1.3rem;
+    			 right: -8.8rem;
+            }
+        }
+        @media screen and (max-width: 480px) {
+        	.green-button {
+        		font-size : 12px;
+        		display: inline-flex;
+    			flex-direction: column;
+        	}
+            .para {
+                font-size: 0.6rem;
+            }
+            .clock {
+                left: 0.5rem;
+    			top: 0rem;
+            }
+            .trash {
+            	left: 0.5rem;
+    			top: -0.5rem;
+            }
+            .hours {
+            	left: -0.5rem;
+    			top: 0rem;
+            }
+            .timesheet {
+            	 right: -2.5rem;
+    			 top: 1.3rem;
+            }
+        }
+        @media screen and (max-width: 320px) {
+        	.green-button {
+        		font-size : 10px;
+        		display: inline-flex;
+    			flex-direction: column;
+        	}
+            .para {
+                font-size: 0.5rem;
+            }
+            .clock {
+                left: 0.5rem;
+    			top: 0rem;
+            }
+            .trash {
+            	left: 0.5rem;
+    			top: -0.5rem;
+            }
+            .hours {
+            	left: 0.5rem;
+    			top: 0rem;
+            }
+            .timesheet {
+    			 top: 1.2rem;
+    			 right: -2rem;
+            }
+        }
