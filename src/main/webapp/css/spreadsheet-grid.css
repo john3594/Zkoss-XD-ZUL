@@ -1,7 +1,7 @@
 .spreadsheet-grid {
 	margin-top: 1rem;
     width: auto;
-    border-radius : 9px; /* Adjust the width as needed */
+    border-radius : 5px; /* Adjust the width as needed */
     border-collapse: collapse;
     border : 1px solid #ccd5ac;
 }
@@ -17,13 +17,12 @@
 
 .spreadsheet-grid th {
 	border : 1px solid #ccd5ac;
-    background-color: white;
+    background-color: rgb(186, 224, 158); 
     font-weight: bold;
     width: 80px; /* Set the width of "Name" column */
 }
 .spreadsheet-grid td {
 	border : 1px solid #ccd5ac;
-    background-color:white;
     font-weight: bold;
     width: 80px; /* Set the width of "Name" column */
 }
@@ -31,7 +30,7 @@
 .spreadsheet-grid {
 	background-color : white;
 	border-collapse:collapse;
-	border : 2px solid black;
+	border : 2px solid rgb(177, 214, 169);
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
@@ -40,11 +39,39 @@
 }
 .z-column {
 	color : blcak;
-    background-color: #e3e7e4;
-    border-left: 1px solid white;
-    border-bottom: 1px solid white;
     padding: 0;
     position: relative;
     overflow: hidden;
     white-space: nowrap;
+}
+
+.z-column-content {
+	background-color : green;
+}
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .spreadsheet-grid th,
+    .spreadsheet-grid td {
+        padding: 4px;
+        max-width:786px;
+        width:100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .spreadsheet-grid th,
+    .spreadsheet-grid td {
+        padding: 2px;
+        max-width:480px;
+        width:100%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .spreadsheet-grid th,
+    .spreadsheet-grid td {
+        font-size: 12px;
+        max-width:320px;
+        width:100%;
+    }
 }

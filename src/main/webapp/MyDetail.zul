@@ -1,12 +1,16 @@
 <?link rel="stylesheet" type="text/css" href="/css/fontawesome.css"?>
 <zk xmlns:h="native">
 	<h:link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"/>
+	<style src="/css/ChangePassword.css" />
 	<style>
         .wind {
-			margin-left: 40px;
-			margin-right: 40px;
-			border : "none";
-			width:768px;
+		    left: 0;
+		    right: 0;
+		    position: relative;
+		    paddiing-left: 40px;
+		    padding-right: 40px;
+		    border: "none";
+		    width: 768px;
 		}
 		.index-header-inner {
 			margin: auto;
@@ -31,6 +35,10 @@
 			.avatar {
 				max-width:200px;
 			}
+			.pwd {
+				margin-left: 3px;
+    			margin-top: 0px;
+			}
 		}
 		@media only screen and (min-width: 321px) {
 			.user_avatar {
@@ -43,7 +51,9 @@
 			.pwd {
 				display:flex;
 				width:150px;
-				font-size:8px;
+				font-size:14px;
+				margin-left: 3px;
+    			margin-top: 0px;
 			}
 		}
 		.user_avatar {
@@ -61,10 +71,11 @@
 		}
 		.pwd {
 			width:150px;
+			justify-content : center;
 			background-color:#5BA948;
 			padding:10px;
-			margin-right:40px;
-			font-size:14px;
+			margin-right: -8px
+			font-size: 14px;
 			float:right;!important
 		}
 
@@ -73,7 +84,7 @@
 			margin-left:12px;
 		}
 		.user_info {
-			font-family:'Times New Roman';
+			font-family:&apos;Times New Roman&apos;;
 			font-size:1.5rem;
 			width: 768px;
 			padding-top: 30px;
@@ -98,77 +109,130 @@
 			top:10rem;
 			right:0.8rem;
 			z-index:1;
-			border-radius:100%;"
+			border-radius:100%;&quot;
 		}
 	</style>
-	<window width="100%" height="auto"
-		border="none" sclass="wind">
-		<div sclass="index-header-inner">
-        <!-- Site Logo -->
-	        <div sclass="logo">
-	            <image src="/images/site_logo.png"/>
-	        </div>
-	        
-	        <!-- Notification Bell and User Avatar -->
-	        <div>
-	            <image src="https://img.icons8.com/puffy/32/000000/alarm.png" width="25px" height="auto" style="margin-right: 15px;"/>
-	            <image src="/images/avatar.png" width="30px" height="auto" style="margin-right: 15px;border-radius:100%"/>
-	            <image src="https://img.icons8.com/sf-black/64/menu.png" width="30px" height="auto" style="margin-right: 15px;"/>
-	        </div>
-	    </div>
-	 </window>
-	 <div style="margin-top:2rem">
-		 <label value="My detail" sclass="mydetail_label"/>
-		 <button label="Change password" sclass="pwd" />           
-	 </div>
-     <window width="100%" border="none" sclass="user_avatar">
-	    <grid width="100%" height="100%" style="border:white">
-	            <rows>
-	                <row>
-	                    <div align="center">
-	                        <!-- User Avatar -->
-	                        <div style="position: relative; display: inline-block;">
-	                            <image  src="/images/avatar.png" sclass="avatar"/>
-	                            <!-- Edit Symbol -->
-	                            <image src="/images/edit1.png" sclass="edit_btn"/>
-	                        </div>
-	                        <div>
-	                        	<label value="Robert Garland" style="margin-top:2rem;"/>
-	                        </div>
-	                    </div>
-	                </row>
-	            </rows>
-	    </grid>    
-     	<div sclass="user_info" width="100%" style="margin-top:1rem">
-     		<div>
-	     		<image src="https://img.icons8.com/ios-filled/30/marker.png" width="30" height="30" style="padding-top:1rem"/>
-	     		<label value="address" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
-     		</div>
-     		<div>
-     			<label value="1082 Milford Street, Newmarket, NH 03857" style="padding-left:2.5rem;font-size:1rem;"/>
-     			<image src="/images/edit1.png" width="40px" height="40px" style="position:relative;bottom:1rem;border-radius:100%;left:4rem;float:right;!important" />
-     		</div>
-     	</div>
-     	<div sclass="user_info" width="100%">
-     		<div>
-	     		<image src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/30/external-user-back-to-school-kmg-design-glyph-kmg-design.png" width="30" height="30" style="padding-top:1rem"/>
-	     		<label value="Next of Kin" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
-     		</div>
-     		<div>
-     			<label value="Thomas Garland - Brother" style="padding-left:2.5rem;font-size:1rem;"/>
-     			<image src="/images/edit1.png" width="40px" height="40px" style="position:relative;bottom:1rem;left:4rem;border-radius:100%;float:right;!important" />
-     		</div>
-     	</div>
-     	<div sclass="user_info" width="100%">
-     		<div>
-	     		<image src="https://img.icons8.com/glyph-neue/30/phone.png" width="30" height="30" style="padding-top:1rem" />
-	     		<label value="Contact Details" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
-     		</div>
-     		<div>
-     			<label value="231-486-5263" style="padding-left:2.5rem;font-size:1rem;"/>
-     			<image src="/images/edit1.png" width="40px" height="40px" style="position:relative;bottom:1rem;border-radius:100%;left:4rem;float:right;!important" />
-     		</div>
-     	</div>
+	<zscript><![CDATA[
+        // Function to Open the Modal Dialog
+        void openModal() {
+            modalDialog.doModal(); // Display the modal dialog
+        }
+        
+        // Function to Close the Modal Dialog
+        void closeModal() {
+            modalDialog.setVisible(false); // Hide the modal dialog
+        }
+    ]]></zscript>
+	<window width="100%" height="auto" border="none" sclass="wind">
+		<div sclass="index-header-inner"><!-- Site Logo -->
+			<div sclass="logo">
+				<image src="/images/site_logo.png"/>
+			</div><!-- Notification Bell and User Avatar -->
+			<div>
+				<image src="https://img.icons8.com/puffy/32/000000/alarm.png" width="25px" height="auto" style="margin-right: 15px;"/>
+				<image src="/images/avatar.png" width="30px" height="auto" style="margin-right: 15px;border-radius:100%"/>
+				<image src="https://img.icons8.com/sf-black/64/menu.png" width="30px" height="auto" style="margin-right: 15px;"/>
+			</div>
+		</div>
+		<div style="margin-top:5rem;">
+			<label value="My details" sclass="mydetail_label"/>
+			<button label="Change Password" sclass="pwd" onClick="openModal()"/>
+		</div>
 	</window>
-	
+	<window width="100%" border="none" sclass="user_avatar">
+		<grid width="100%" height="100%" style="border:white">
+			<rows>
+				<row>
+					<div align="center"><!-- User Avatar -->
+						<div style="position: relative; display: inline-block;">
+							<div id="pics">
+								<image src="/images/avatar.png" sclass="avatar"/>
+							</div>
+							<button class="edit_btn" iconSclass="z-icon-pencil" upload="true,maxsize=300">
+						        <attribute name="onUpload"><![CDATA[
+						            org.zkoss.util.media.Media media = event.getMedia();
+						            if (media instanceof org.zkoss.image.Image) {
+						                org.zkoss.zul.Image image = new org.zkoss.zul.Image();
+						                image.setContent(media);
+						                image.setParent(pics);
+						                pics.removeChild(pics.firstChild);
+						                image.setClass("avatar");
+						            } else {
+						                Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+						                break;
+						            }
+						        ]]></attribute>
+						    </button>
+						    <separator />
+						</div>
+						<div>
+							<label value="Robert Garland" style="margin-top:2rem;"/>
+						</div>
+					</div>
+				</row>
+			</rows>
+		</grid>
+		<div sclass="user_info" width="100%" style="margin-top:1rem">
+			<div>
+				<image src="https://img.icons8.com/ios-filled/30/marker.png" width="30" height="30" style="padding-top:1rem"/>
+				<label value="Address" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+			</div>
+			<div>
+				<label value="1082 Milford Street, Newmarket, NH 03857" style="padding-left:2.5rem;font-size:1rem;"/>
+				<image src="/images/edit1.png" width="40px" height="40px" style="position:relative;bottom:1rem;border-radius:100%;left:4rem;float:right;!important"/>
+			</div>
+		</div>
+		<div sclass="user_info" width="100%">
+			<div>
+				<image src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/30/external-user-back-to-school-kmg-design-glyph-kmg-design.png" width="30" height="30" style="padding-top:1rem"/>
+				<label value="Next of Kin" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+			</div>
+			<div>
+				<label value="Thomas Garland - Brother" style="padding-left:2.5rem;font-size:1rem;"/>
+				<image src="/images/edit1.png" width="40px" height="40px" style="position:relative;bottom:1rem;left:4rem;border-radius:100%;float:right;!important"/>
+			</div>
+		</div>
+		<div sclass="user_info" width="100%">
+			<div>
+				<image src="https://img.icons8.com/glyph-neue/30/phone.png" width="30" height="30" style="padding-top:1rem"/>
+				<label value="Contact Details" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+			</div>
+			<div>
+				<label value="231-486-5263" style="padding-left:2.5rem;font-size:1rem;"/>
+				<image src="/images/edit1.png" width="40px" height="40px" style="position:relative;bottom:1rem;border-radius:100%;left:4rem;float:right;!important"/>
+			</div>
+		</div>
+	</window>
+	<!--Change Password modal -->
+	<window id="modalDialog" sclass="window_shape"  width="392px" visible="false">
+        <vlayout spacing="5px" >
+            <!-- Content of the Modal -->
+            <div>
+	            <image src="/images/lock.png" width="20px"/>
+	            <label value="Change Password" style="color:#5BA948;font-size:20px;font-family:'Urbanist';"/>
+            </div>
+            <div>
+	            <image src="/images/warn.png" width="20px"/>
+	            <label value="As a security precaution, changing your password will force all active sessions to log out." style="color:red;font-size:12px;font-family:'Urbanist';word-wrap: break-word;"/>
+            </div>
+            <!-- textbox -->
+            <div>
+	            <textbox type="password" placeholder="Current password" sclass="label_shape"/>
+	            <image src="/images/eye1.png" width="20px" style="position:relative;z-index:1;float : right;!important;bottom:2rem;right:1rem;"  />
+            </div>
+            <div>
+            	<textbox  type="password" placeholder="New password" sclass="label_shape"/>
+            	<image src="/images/eye1.png" width="20px" style="position: relative; z-index:1;float : right;!important;bottom:2rem;right:1rem;" />
+            </div>
+            <div>
+	            <textbox  type="password" placeholder="Confirm your password" sclass="label_shape"/>
+	            <image src="/images/eye1.png" width="20px" style="position:relative;z-index:1;float : right;!important;bottom:2rem;right:1rem;" />
+            </div>
+            <label value="Your new password must be at least 8 characters in length, include lower or uppercase letters and at least 1 number. You are permitted to use the following characters !" style="color:#252525;font-size:13px;font-family:'Urbanist';"/>
+            <hlayout>
+	            <button sclass="btn2" label="Cancel" onClick="closeModal()" style="margin-right : 48px;"/>
+	            <button sclass="btn1" label="Save"/>
+            </hlayout>
+        </vlayout>
+    </window>
 </zk>

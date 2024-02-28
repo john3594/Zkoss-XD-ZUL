@@ -1,73 +1,15 @@
-
-<zk>
-	<zscript>
-        <![CDATA[
-            String getDayOfWeek(int number) {
-                int remainder = number % 7;
-                String dayOfWeek = "";
-                switch (remainder) {
-                    case 0:
-                        dayOfWeek = "Sun";
-                        break;
-                    case 1:
-                        dayOfWeek = "Mon";
-                        break;
-                    case 2:
-                        dayOfWeek = "Tue";
-                        break;
-                    case 3:
-                        dayOfWeek = "Wed";
-                        break;
-                    case 4:
-                        dayOfWeek = "Thu";
-                        break;
-                    case 5:
-                        dayOfWeek = "Fri";
-                        break;
-                    case 6:
-                        dayOfWeek = "Sat";
-                        break;
-                }
-                return dayOfWeek;
-            }
-        ]]>
-    </zscript>
-    <style src="/css/Request.css" />
-    <style src="/css/spreadsheet-grid.css"/>
-    <style>
-    	.trash {
-		    position: relative;
-		    bottom: 0rem;
-		    border-radius: 100%;
-		    left: 4rem;
-		    float: right;
-		    width: 30px;
-		    height: 30px;
-		}
-    	.para {
-    		font-family:'Times New Roman';
-			font-size:1.5rem;
-			width: 768px;
-			padding-top: 30px;
-		    padding-right: 80px;
-		    padding-bottom: 30px;
-		    padding-left: 20px;
-			border: white;
-			border-radius : 20px;
-			box-shadow: 2px 2px 2px 2px #EFEFEF;
-			margin-bottom:auto;
-    	}
-	    .wind {
-				margin-left: 40px;
-				margin-right: 40px;
-				border : "none";
-				width : 100%;
-				max-width:768px;
+<?link rel="stylesheet" type="text/css" href="/css/fontawesome.css"?>
+<zk xmlns:h="native">
+	<h:link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"/>
+	<style>
+        .wind {
+			margin-left: 40px;
+			margin-right: 40px;
+			border : "none";
+			width:768px;
 		}
 		.index-header-inner {
 			margin: auto;
-			width : 100%;
-			max-width : 768px;
     		position: fixed; 
     		top: 0; 
     		left: 0; 
@@ -81,155 +23,85 @@
     		justify-content: space-between; 
     		z-index: 1000;
 		}
+		@media only screen and (max-width: 768px) {
+			.user_avatar {
+				display:flex;
+				max-width:100%;
+			}
+			.avatar {
+				max-width:200px;
+			}
+		}
+		@media only screen and (min-width: 321px) {
+			.user_avatar {
+				display:flex;
+				max-width:100%;
+			}
+			.avatar {
+				width:100px;
+			}
+			.pwd {
+				display:flex;
+				width:150px;
+				font-size:8px;
+			}
+		}
+		.user_avatar {
+			display: flex; 
+			margin-top: 1.5rem;
+			border-radius: full;
+			align-items: center; 
+			width:768px;
+		}
+		.mydetail_label {
+			color:#5BA948;
+			margin-left:40px;
+			margin-top:46px;
+			font-size:1.5rem;
+		}
+		.pwd {
+			width:150px;
+			background-color:#5BA948;
+			padding:10px;
+			margin-right:40px;
+			font-size:14px;
+			float:right;!important
+		}
+
 		.logo {
 			width:80px;
 			margin-left:12px;
 		}
-    	.container1 {
-		    display: flex;
-		    flex-wrap: wrap;
-		    justify-content: center; /* Center the items horizontally */
+		.user_info {
+			font-family:'Times New Roman';
+			font-size:1.5rem;
+			width: 768px;
+			padding-top: 30px;
+		    padding-right: 80px;
+		    padding-bottom: 30px;
+		    padding-left: 20px;
+			border: white;
+			border-radius : 20px;
+			box-shadow: 2px 2px 2px 2px #EFEFEF;
+			margin-bottom:1rem;
 		}
-		
-		.column {
-		    flex: 1;
-		    margin: 0 1rem; /* Adjust spacing between columns */
+		.avatar {
+			width:200px;
+			height=auto; 
+			position:relative;
+			border-radius:100%;
 		}
-    	.container {
-            width: 100%;
-            max-width: 768px;
-            margin: auto;
-        }
-        .btn {
-        	color : black;
-        	margin : auto;
-        	width:50%;
-        	padding-top : 20px;
-        	padding-bottom : 20px;
-        	aligh-items : center;
-        	background-color : #F0F0F0;
-        	border : #F0F0F0;
-        	border-radius : 12px;
-        }
-        .btn:hover {
-        	background-color : #EEF7ED;
-        	color : black;
-        }
-        .taskName {
-        	width:100%;
-        	padding-top : 30px;
-        	padding-bottom : 30px;
-        	background-color : #F0F0F0;
-        	border : #F0F0F0;
-        	border-radius : 12px;
-        	margin-bottom : 2rem;
-        }
-        @media screen and (max-width: 900px) {
-			.column {
-		        flex-basis: 33%; /* Each column takes full width on smaller screens */
-		        margin: 0.5rem 0; /* Adjust spacing between columns */
-		    }
-			.green-button {
-        		font-size : 18px;
-        	}
-            .container {
-                padding: 0 0px;
-            }
-            .para {
-                font-size: 1.2rem;
-                padding: 20px;
-            }
-        }
-		@media screen and (max-width: 768px) {
-			.column {
-		        flex-basis: 33.3%; /* Each column takes full width on smaller screens */
-		        margin: 0.5rem 0; /* Adjust spacing between columns */
-			.green-button {
-        		font-size : 18px;
-        	}
-            .container {
-                padding: 0 0px;
-            }
-            .para {
-                font-size: 1.2rem;
-                padding: 20px;
-            }
-            .btn {
-	        	width:80%;
-	        	max-width : 768px;
-	        	display : flex;
-			    justify-content:center;
-	        	margin : auto;
-	        	aligh-items : center;
-	        	padding : auto;
-            }
-        }
-        @media screen and (max-width: 480px) {
-        	.column {
-		        flex-basis: 33.3%; /* Each column takes full width on smaller screens */
-		        margin: 0.5rem 0; /* Adjust spacing between columns */
-		    }
-		    .rect {
-		    	flex-basis: 25%
-		    	margin : 0.3rem 0;
-		    }
-        	.green-button {
-        		width : 150%;
-        		font-size : 18px;
-        		display: inline-flex;
-    			flex-direction: column;
-        	}
-        	.container {
-                padding: 0 0px;
-            }
-            .para {
-                font-size: 0.6rem;
-            }
-            .btn {
-	        	width: 90%;
-			    max-width: 480px;
-			   	display : flex;
-			    justify-content:center;
-			    margin: auto;
-			    aligh-items : center;
-			    padding: auto;
-            }
-        }
-        @media screen and (max-width: 320px) {
-        	.column {
-		        flex-basis: 33.3%; /* Each column takes full width on smaller screens */
-		        margin: 0.5rem 0; /* Adjust spacing between columns */
-		    }
-		    .rect {
-		    	flex-basis: 25%
-		    	margin : 0.2rem 0;
-		    }
-        	.green-button {
-        		width : 150%;
-        		justify-content : center;
-        		font-size : 18px;
-        		display: inline-flex;
-    			flex-direction: column;
-        	}
-        	.container {
-                padding: 0 0px;
-            }
-            .para {
-                font-size: 0.5rem;
-            }
-            .btn {
-	        	width:100%;
-	        	display : flex;
-			    justify-content:center;
-			    aligh-items : center;
-	        	max-width : 320px;
-	        	margin : auto;
-	        	padding : auto;
-            }
-        }
-    </style>
-   
-    <window width="768px" height="auto"
+		.edit_btn {
+			width:40px;
+			height:auto;
+			position:absolute;
+			top:10rem;
+			right:0.8rem;
+			z-index:1;
+			border-radius:100%;"
+		}
+	</style>
+	<window width="100%" height="auto"
 		border="none" sclass="wind">
 		<div sclass="index-header-inner">
         <!-- Site Logo -->
@@ -245,110 +117,58 @@
 	        </div>
 	    </div>
 	 </window>
-	<window width="768px" height="auto"
-		border="none" sclass="container">
-	 	 <div style="border:1px solid #DBDBDB;border-radius :9px;">
-			<chart id="mychart1" width="700px" height="250px;"
-				type="pie" threeD="false" fgAlpha="128">				
-				<zscript>
-				  	PieModel model1 = new SimplePieModel();
-				  	model1.setValue("Pending Leave Requests", new Double(17.5));
-					model1.setValue("Leave Taken", new Double(32.5));
-					model1.setValue("Leave Remaining", new Double(43.2));
-				  	mychart1.setModel(model1);
-				</zscript>
-			</chart>
-		</div>
+	 <div style="margin-top:2rem">
+		 <label value="My detail" sclass="mydetail_label"/>
+		 <button label="Change password" sclass="pwd" />           
+	 </div>
+     <window width="100%" border="none" sclass="user_avatar">
+	    <grid width="100%" height="100%" style="border:white">
+	            <rows>
+	                <row>
+	                    <div align="center">
+	                        <!-- User Avatar -->
+	                        <div style="position: relative; display: inline-block;">
+	                            <image  src="/images/avatar.png" sclass="avatar"/>
+	                            <!-- Edit Symbol -->
+	                            <image src="/images/edit1.png" sclass="edit_btn"/>
+	                        </div>
+	                        <div>
+	                        	<label value="Robert Garland" style="margin-top:2rem;"/>
+	                        </div>
+	                    </div>
+	                </row>
+	            </rows>
+	    </grid>    
+     	<div sclass="user_info" width="100%" style="margin-top:1rem">
+     		<div>
+	     		<image src="https://img.icons8.com/ios-filled/30/marker.png" width="30" height="30" style="padding-top:1rem"/>
+	     		<label value="address" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+     		</div>
+     		<div>
+     			<label value="1082 Milford Street, Newmarket, NH 03857" style="padding-left:2.5rem;font-size:1rem;"/>
+     			<image src="/images/edit1.png" width="40px" height="40px" style="position:relative;bottom:1rem;border-radius:100%;left:4rem;float:right;!important" />
+     		</div>
+     	</div>
+     	<div sclass="user_info" width="100%">
+     		<div>
+	     		<image src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/30/external-user-back-to-school-kmg-design-glyph-kmg-design.png" width="30" height="30" style="padding-top:1rem"/>
+	     		<label value="Next of Kin" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+     		</div>
+     		<div>
+     			<label value="Thomas Garland - Brother" style="padding-left:2.5rem;font-size:1rem;"/>
+     			<image src="/images/edit1.png" width="40px" height="40px" style="position:relative;bottom:1rem;left:4rem;border-radius:100%;float:right;!important" />
+     		</div>
+     	</div>
+     	<div sclass="user_info" width="100%">
+     		<div>
+	     		<image src="https://img.icons8.com/glyph-neue/30/phone.png" width="30" height="30" style="padding-top:1rem" />
+	     		<label value="Contact Details" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+     		</div>
+     		<div>
+     			<label value="231-486-5263" style="padding-left:2.5rem;font-size:1rem;"/>
+     			<image src="/images/edit1.png" width="40px" height="40px" style="position:relative;bottom:1rem;border-radius:100%;left:4rem;float:right;!important" />
+     		</div>
+     	</div>
 	</window>
 	
-    <window width="768px" height="auto"
-		border="none" sclass="container">
-        <div sclass="container" id="daily">
-        	<div style="display: flex;">
-			    <button label="Submit Timesheet Event" sclass="green-button" style="padding:25px;margin-top:-25px;"/>
-			</div>  
-			<div style="display: flex;margin-top:3rem;">
-			    <label value="Pending Leave Requests" style="float:left;!important;margin-left : 12px;font-size:26px;color:#5BA948;"/>
-			</div>
-			<div sclass="para" width="100%" style="margin-top:0.5rem">
-	     		<div>
-	     			<image src="/images/red.png" style="width:14px;" />
-		     		<label value="9:00 AM on 10/01/2024 - 7:00 PM on 13/01/2024" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
-		     		<image src="/images/trash.png" width="30px" height="30px" sclass="trash" />
-	     		</div>
-	     	</div>
-	     	<div sclass="para" width="100%" style="margin-top:0.5rem;">
-	     		<div>
-	     			<image src="/images/yellow.png" style="width:14px;" />
-		     		<label value="11:30 AM on 18/01/2024 - 9:00 PM on 22/01/2024" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
-		     		<image src="/images/trash.png" width="30px" height="30px" sclass="trash" />
-	     		</div>
-	     	</div>
-	     	<div style="display: flex;margin-top:3rem;">
-			    <label value="Pending Leave Requests" style="float:left;!important;margin-left : 12px;font-size:26px;color:#5BA948;"/>
-			</div>
-        </div>
-        
-        <grid width="700px;" sclass="spreadsheet-grid">
-					<frozen style="background: white" columns="1">
-						<div style="width: 200px;" />
-					</frozen>
-			        <columns style="background-color: white">
-			        	 <column width="130px">
-			        	 	<label value="Name"  style="color:black;"/>
-			        	 </column>
-			             <forEach begin="1" end="31" step="1" var="day">
-				            <column width="100px">
-				            	
-				            	<div sclass="z-label">
-				            		<label  value="${day}" style="color:black"/>
-				            	</div>
-				            </column>
-				        </forEach>
-			        </columns>
-		        	<rows >
-		                <row >
-		                    <label value="Gerald Fennell" style="color:black;"/>
-		                    <forEach begin="1" end="31" step="1" var="day1">
-		                        <label value="" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		                    </forEach>
-		                </row>
-		                <row>
-		                    <label value="Wiliam Melton" style="color:black;"/>
-		                    <forEach begin="1" end="31" step="1" var="day2">
-		                        <label value="" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		                    </forEach>
-		                </row>
-		                <row >
-		                    <label value="James Tony" style="color:black;"/>
-		                    <forEach begin="1" end="31" step="1" var="day3">
-		                        <label value="" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		                    </forEach>
-		                </row>
-		        	</rows>
-		    </grid>
-		    <div>
-		        <image src="/images/non-working.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged, 'non-working')"/>
-		        <label value="non-working" />
-		        <image src="/images/bank.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		        <label value="bank/holiday" />
-		        <image src="/images/puple_rect.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		        <label value="Pending" />
-		        <image src="/images/black_rect.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		        <label value="Public holiday" />
-		        <image src="/images/blue_rect.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		        <label value="Sick Leave" />
-		        <image src="/images/red_rect.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		   		<label value="Leave" />
-		   </div>
-    </window>
-    <zscript>
-		void move(Component dragged) {
-			self.parent.insertBefore(dragged, self);				
-		}
-	</zscript>
 </zk>
-
-
-
-

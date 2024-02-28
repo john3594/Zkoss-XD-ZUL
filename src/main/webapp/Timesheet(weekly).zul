@@ -2,8 +2,8 @@
 <zk>
     <style src="/css/Request.css" />
     <style src="/css/spreadsheet-grid.css"/>
-    <style src="/css/weekly.css" />
-        <div sclass="container" id="weekly" style="margin-top:4rem;">
+    <style src="/css/dayofweek.css" />
+        <div sclass="container" width="100%" id="weekly" style="margin-top:4rem;">
         	<div>
 	        	<!-- back redirect button -->
 	            <image src="/images/back.png" width="30" />

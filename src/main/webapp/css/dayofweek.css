@@ -45,7 +45,7 @@
     		top: 1.5rem;
 		    position: relative;
 		    z-index: 1;
-		    right: -7.5rem;
+		    right: -6.5rem;
 		}
 		.trash {
 		    position: relative;
@@ -118,7 +118,7 @@
     			top: 0rem;
             }
             .timesheet {
-            	 right: -2.3rem;
+            	 right: -3.3rem;
     			 top: 1.2rem;
             }
         }

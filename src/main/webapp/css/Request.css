@@ -66,15 +66,92 @@
             select, .days {
                 width: 100%;
             }
+            .table-container {
+	            width: 100%;
+	            overflow-x: auto;
+	            padding: 8px; /* Add padding to cells */
+	            text-align : center;
+	        }
+            .container {
+            	max-width : 768px;
+            	width : 100%;
+            	margin : auto;
+            	padding : auto;
+            }
+            .green-button {
+            	background-color: #5BA948;
+			    color: white;
+			    padding-top: 13px;
+			    border: none;
+			    border-radius: 14px;
+			    cursor: pointer;
+			    align-items: center;
+			    justify-content: center;
+			    margin-top: 10px;
+			    margin-left: auto;
+			    margin-right: auto;
+			    width: 46%;
+			    font-size : 20px;
+            }
+            .table-container {
+	            width: 100%;
+	            overflow-x: auto;
+	            padding: 8px; /* Add padding to cells */
+	            text-align : center;
+	        }
         }
         @media screen and (max-width: 480px) {
             select, .days {
                 width: 100%;
             }
+            .container {
+            	max-width : 480px;
+            	width : 100%;
+            	margin : auto;
+            	padding : auto;
+            }
+            .green-button {
+            	background-color: #5BA948;
+			    color: white;
+			    padding-top: 13px;
+			    border: none;
+			    border-radius: 14px;
+			    cursor: pointer;
+			    align-items: center;
+			    justify-content: center;
+			    margin-top: 10px;
+			    margin-left: auto;
+			    margin-right: auto;
+			    width: 46%;
+			    font-size : 20px;
+            }
+            
         }
         @media screen and (max-width: 320px) {
             select, .days {
                 width: 100%;
             }
+            .container {
+            	max-width : 320px;
+            	width : 100%;
+            	margin : auto;
+            	padding : auto;
+            }
+            .green-button {
+            	background-color: #5BA948;
+			    color: white;
+			    padding-top: 13px;
+			    border: none;
+			    border-radius: 14px;
+			    cursor: pointer;
+			    align-items: center;
+			    justify-content: center;
+			    margin-top: 10px;
+			    margin-left: auto;
+			    margin-right: auto;
+			    width: 46%;
+			    font-size : 20px;
+            }
+            
         }
         

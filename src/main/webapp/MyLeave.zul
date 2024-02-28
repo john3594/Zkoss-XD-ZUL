@@ -1,45 +1,23 @@
 
 <zk>
-	<zscript>
-        <![CDATA[
-            String getDayOfWeek(int number) {
-                int remainder = number % 7;
-                String dayOfWeek = "";
-                switch (remainder) {
-                    case 0:
-                        dayOfWeek = "Sun";
-                        break;
-                    case 1:
-                        dayOfWeek = "Mon";
-                        break;
-                    case 2:
-                        dayOfWeek = "Tue";
-                        break;
-                    case 3:
-                        dayOfWeek = "Wed";
-                        break;
-                    case 4:
-                        dayOfWeek = "Thu";
-                        break;
-                    case 5:
-                        dayOfWeek = "Fri";
-                        break;
-                    case 6:
-                        dayOfWeek = "Sat";
-                        break;
-                }
-                return dayOfWeek;
-            }
-        ]]>
-    </zscript>
+	
     <style src="/css/Request.css" />
     <style src="/css/spreadsheet-grid.css"/>
     <style>
+    	.z-label {
+    		background : #cecece3;
+    	}
+    	.mydetail_label {
+			color:#5BA948;
+			margin-left:40px;
+			margin-top:46px;
+			font-size:1.5rem;
+		}
     	.trash {
 		    position: relative;
 		    bottom: 0rem;
 		    border-radius: 100%;
-		    left: 4rem;
+		    right: 0rem;
 		    float: right;
 		    width: 30px;
 		    height: 30px;
@@ -96,7 +74,7 @@
 		    margin: 0 1rem; /* Adjust spacing between columns */
 		}
     	.container {
-            width: 100%;
+            width: 94%;
             max-width: 768px;
             margin: auto;
         }
@@ -143,15 +121,15 @@
 		@media screen and (max-width: 768px) {
 			.column {
 		        flex-basis: 33.3%; /* Each column takes full width on smaller screens */
-		        margin: 0.5rem 0; /* Adjust spacing between columns */
+		        margin: 0.3rem 0; /* Adjust spacing between columns */
 			.green-button {
-        		font-size : 18px;
+        		font-size : 14px;
         	}
             .container {
                 padding: 0 0px;
             }
             .para {
-                font-size: 1.2rem;
+                font-size: 14px;
                 padding: 20px;
             }
             .btn {
@@ -171,22 +149,27 @@
 		    }
 		    .rect {
 		    	flex-basis: 25%
-		    	margin : 0.3rem 0;
+		    	margin : 0.1rem 0;
 		    }
         	.green-button {
-        		width : 150%;
-        		font-size : 18px;
+        		width : 120%;
+        		font-size : 16px;
         		display: inline-flex;
     			flex-direction: column;
         	}
         	.container {
                 padding: 0 0px;
+                max-width : 480px;
+                width : 100%;
             }
             .para {
-                font-size: 0.6rem;
+                font-size: 1rem;
+                max-width: 480px;
+                width : 100%;
             }
             .btn {
-	        	width: 90%;
+	        	width: 60%;
+	        	height : auto;
 			    max-width: 480px;
 			   	display : flex;
 			    justify-content:center;
@@ -197,17 +180,17 @@
         }
         @media screen and (max-width: 320px) {
         	.column {
-		        flex-basis: 33.3%; /* Each column takes full width on smaller screens */
-		        margin: 0.5rem 0; /* Adjust spacing between columns */
+		        flex-basis: 20%; /* Each column takes full width on smaller screens */
+		        margin: 0.1rem 0; /* Adjust spacing between columns */
 		    }
 		    .rect {
 		    	flex-basis: 25%
 		    	margin : 0.2rem 0;
 		    }
         	.green-button {
-        		width : 150%;
+        		width : 100%;
         		justify-content : center;
-        		font-size : 18px;
+        		font-size : 16px;
         		display: inline-flex;
     			flex-direction: column;
         	}
@@ -215,7 +198,9 @@
                 padding: 0 0px;
             }
             .para {
-                font-size: 0.5rem;
+            	max-width : 320px;
+            	width : 100%;
+                font-size: 0.8rem;
             }
             .btn {
 	        	width:100%;
@@ -244,28 +229,29 @@
 	            <image src="https://img.icons8.com/sf-black/64/menu.png" width="30px" height="auto" style="margin-right: 15px;"/>
 	        </div>
 	    </div>
-	 </window>
+	</window>
 	<window width="768px" height="auto"
 		border="none" sclass="container">
+		 <label value="My Leave" sclass="mydetail_label" style="margin-bottom:3rem;"/>
 	 	 <div style="border:1px solid #DBDBDB;border-radius :9px;">
 			<chart id="mychart1" width="700px" height="250px;"
 				type="pie" threeD="false" fgAlpha="128">				
 				<zscript>
 				  	PieModel model1 = new SimplePieModel();
-				  	model1.setValue("Pending Leave Requests", new Double(17.5));
-					model1.setValue("Leave Taken", new Double(32.5));
-					model1.setValue("Leave Remaining", new Double(43.2));
+				  	model1.setValue("", new Double(17.5));
+					model1.setValue("", new Double(32.5));
+					model1.setValue("", new Double(43.2));
 				  	mychart1.setModel(model1);
 				</zscript>
 			</chart>
 		</div>
 	</window>
 	
-    <window width="768px" height="auto"
+    <window width="768px" height="auto" id="tablet"
 		border="none" sclass="container">
         <div sclass="container" id="daily">
         	<div style="display: flex;">
-			    <button label="Submit Timesheet Event" sclass="green-button" style="padding:25px;margin-top:-25px;"/>
+			    <button label="Request Timesheet Event" sclass="green-button" style="padding:25px;margin-top: 11px;"/>
 			</div>  
 			<div style="display: flex;margin-top:3rem;">
 			    <label value="Pending Leave Requests" style="float:left;!important;margin-left : 12px;font-size:26px;color:#5BA948;"/>
@@ -284,31 +270,27 @@
 		     		<image src="/images/trash.png" width="30px" height="30px" sclass="trash" />
 	     		</div>
 	     	</div>
-	     	<div style="display: flex;margin-top:3rem;">
-			    <label value="Pending Leave Requests" style="float:left;!important;margin-left : 12px;font-size:26px;color:#5BA948;"/>
-			</div>
         </div>
         
-        <grid width="700px;" sclass="spreadsheet-grid">
-					<frozen style="background: white" columns="1">
+        <grid width="670px;" style="border-left: 1px solid #b5d6c0;">
+					<frozen columns="1">
 						<div style="width: 200px;" />
 					</frozen>
-			        <columns style="background-color: white">
-			        	 <column width="130px">
-			        	 	<label value="Name"  style="color:black;"/>
+			        <columns >
+			        	 <column width="130px"  style="background-color: #c2e2c5;">
+			        	 	<label value="Name" style="color:black;float:left;"/>
 			        	 </column>
 			             <forEach begin="1" end="31" step="1" var="day">
-				            <column width="100px">
-				            	
-				            	<div sclass="z-label">
-				            		<label  value="${day}" style="color:black"/>
+				            <column width="100px"  style="background-color: #c2e2c5;">
+				            	<div style="border-left:1px solid green;">
+				            		<label  value="${day}" style="color:black;float:left;"/>
 				            	</div>
 				            </column>
 				        </forEach>
 			        </columns>
 		        	<rows >
 		                <row >
-		                    <label value="Gerald Fennell" style="color:black;"/>
+		                    <label value="Gerald Fennell" style="color:black;float:left;"/>
 		                    <forEach begin="1" end="31" step="1" var="day1">
 		                        <label value="" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
 		                    </forEach>
@@ -319,7 +301,7 @@
 		                        <label value="" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
 		                    </forEach>
 		                </row>
-		                <row >
+		                <row>
 		                    <label value="James Tony" style="color:black;"/>
 		                    <forEach begin="1" end="31" step="1" var="day3">
 		                        <label value="" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
@@ -327,21 +309,70 @@
 		                </row>
 		        	</rows>
 		    </grid>
-		    <div>
-		        <image src="/images/non-working.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged, 'non-working')"/>
-		        <label value="non-working" />
-		        <image src="/images/bank.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		        <label value="bank/holiday" />
-		        <image src="/images/puple_rect.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		        <label value="Pending" />
-		        <image src="/images/black_rect.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		        <label value="Public holiday" />
-		        <image src="/images/blue_rect.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		        <label value="Sick Leave" />
-		        <image src="/images/red_rect.png" width="40px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
-		   		<label value="Leave" />
+		    <div >
+		        <image src="/images/non-working.png" width="20px" draggable="true" droppable="true" onDrop="move(event.dragged, 'non-working')"/>
+		        <label value="Non-working Days" style="font-size:10px;"/>
+		        <image src="/images/bank.png" width="20px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
+		        <label value="Bank/Company Holidays" style="font-size:10px;"/>
+		        <image src="/images/puple_rect.png" width="20px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
+		        <label value="Pending" style="font-size:10px;"/>
+		        <image src="/images/black_rect.png" width="20px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
+		        <label value="Public Holiday" style="font-size:10px;"/>
+		        <image src="/images/blue_rect.png" width="20px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
+		        <label value="Leave" style="font-size:10px;"/>
+		        <image src="/images/red_rect.png" width="20px" draggable="true" droppable="true" onDrop="move(event.dragged)"/>
+		   		<label value="Sick Leave" style="font-size:10px;"/>
 		   </div>
+		   
+		   <div sclass="container">
+			<div style="display: flex;margin-top:3rem;">
+			    <label value="Hilly Farm, Crop Production Leave" style="float:left;!important;margin-left : 12px;font-size:26px;color:#5BA948;"/>
+			</div>
+	     	<div sclass="para" width="100%">
+	     		<div>
+	     			<image src="/images/green.png" style="width:14px;" />
+		     		<label value="12:00 PM on 24/01/2024 - 10:00 PM on 27/01/2024 - Bruce Allen" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+	     		</div>
+	     	</div>
+	     	<div sclass="para" width="100%">
+	     		<div>
+	     			<image src="/images/green.png" style="width:14px;" />
+		     		<label value="12:00 PM on 26/01/2024 - 10:00 PM on 6/02/2024 - Joseph Hanson" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+	     		</div>
+	     	</div>
+	     	<div sclass="para" width="100%">
+	     		<div>
+	     			<image src="/images/green.png" style="width:14px;" />
+		     		<label value="12:00 PM on 26/01/2024 - 10:00 PM on 6/02/2024 - John Carmean" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+	     		</div>
+	     	</div>
+        	</div>
+        	<div sclass="container">
+				<div style="display: flex;margin-top:3rem;margin-bottom:1rem;">
+				    <label value="Previous Leave" style="float:left;!important;margin-left : 12px;font-size:26px;color:#5BA948;"/>
+				</div>
+				<div style="margin-bottom:1rem;">
+					<datebox format="MM/dd/yyyy" style="padding-left:2rem;"/>
+					<datebox format="MM/dd/yyyy" style="float:right;right:2rem;"/>
+				</div>
+		     	<div sclass="para" width="100%">
+		     		<div>
+		     			<image src="/images/green.png" style="width:14px;" />
+			     		<label value="3:00 PM on 3/11/2023 - 8:00 AM on 10/11/2023" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+		     		</div>
+		     	</div>
+		     	<div sclass="para" width="100%">
+		     		<div>
+		     			<image src="/images/green.png" style="width:14px;" />
+			     		<label value="3:00 PM on 12/11/2023 - 8:00 AM on 18/11/2023" style="padding-left:12px;padding-top:1.2rem;font-size:1rem;"/>
+		     		</div>
+		     	</div>
+        	</div>
     </window>
+    <div apply="demo.ctrl.PieChartComposer">
+				<charts id="chart" type="pie" width="480" 
+					height="300" title="Pie Chart Demo"/>
+	</div>
     <zscript>
 		void move(Component dragged) {
 			self.parent.insertBefore(dragged, self);				

@@ -45,7 +45,7 @@
     		top: 1.5rem;
 		    position: relative;
 		    z-index: 1;
-		    right: -7.5rem;
+		    right: -6.5rem;
 		}
 		.trash {
 		    position: relative;
@@ -73,37 +73,47 @@
         		font-size : 12px;
         	}
             .container {
+            	max-width : 768px;
                 padding: 0 10px;
             }
             .para {
+            	width : 100%;
                 font-size: 1.2rem;
                 padding: 20px;
+                max-width : 768px;
             }
             .clock {
                 left: 0.5rem;
-    			bottom: 2rem;
+    			bottom: 0.5rem;
             }
             .trash {
             	left: 0.5rem;
     			bottom: 0.5rem;
             }
             .hours {
-            	left: -0.5rem;
+            	left: 0.5rem;
     			bottom: 0.5rem;
             }
             .timesheet {
             	 top: 1.3rem;
-    			 right: -8.8rem;
+    			 right: -6.5rem;
             }
         }
         @media screen and (max-width: 480px) {
+        	.container {
+        		width : 100%;
+            	max-width : 480px;
+                padding: 0 10px;
+            }
         	.green-button {
         		font-size : 12px;
         		display: inline-flex;
     			flex-direction: column;
         	}
             .para {
+            	width : 100%;
                 font-size: 0.6rem;
+                max-width : 480px;
             }
             .clock {
                 left: 0.5rem;
@@ -114,21 +124,27 @@
     			top: -0.5rem;
             }
             .hours {
-            	left: -0.5rem;
+            	left: 0.5rem;
     			top: 0rem;
             }
             .timesheet {
-            	 right: -2.5rem;
+            	 right: -6.3rem;
     			 top: 1.3rem;
             }
         }
         @media screen and (max-width: 320px) {
+        	.container {
+            	max-width : 320px;
+                padding: 0 10px;
+            }
         	.green-button {
         		font-size : 10px;
         		display: inline-flex;
     			flex-direction: column;
         	}
             .para {
+            	width : 100%;
+            	max-width : 320px;
                 font-size: 0.5rem;
             }
             .clock {
@@ -144,7 +160,7 @@
     			top: 0rem;
             }
             .timesheet {
-    			 top: 1.2rem;
+    			 top: 1.3rem;
     			 right: -2rem;
             }
         }
